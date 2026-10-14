@@ -37,6 +37,15 @@
 .play-teaser .teaser-copy h2 em{color:var(--glow)}
 .play-teaser .teaser-copy>p:not(.kicker){color:var(--muted-dark)}
 .play-teaser .teaser-row a{box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.hero-actions{flex-wrap:wrap}
+.hero-play{background:linear-gradient(135deg,#ffe08a,#ffb347 45%,#ff7a1a);animation:heroPlayGlow 2.4s ease-in-out infinite}
+@keyframes heroPlayGlow{50%{box-shadow:0 0 0 6px rgba(255,200,97,.25),0 16px 40px rgba(255,122,26,.55)}}
+@media (prefers-reduced-motion:reduce){.hero-play{animation:none}}
+.poster-play{display:none;position:absolute;z-index:3;right:var(--gutter);bottom:150px;align-items:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;text-decoration:none;font-weight:900;font-size:18px;color:#2a1206;background:linear-gradient(135deg,#ffe08a,#ffb347 45%,#ff7a1a);box-shadow:0 12px 34px rgba(255,122,26,.55),inset 0 1px 0 rgba(255,255,255,.5);animation:heroPlayGlow 2.4s ease-in-out infinite}
+.poster-play:hover{transform:translateY(-2px)}
+@media (max-width:720px){.poster-play{display:inline-flex;right:auto;left:50%;transform:translateX(-50%);bottom:84px;font-size:17px;min-height:52px;white-space:nowrap}.poster-play:hover{transform:translateX(-50%)}}
+.header-play{display:none;align-items:center;gap:6px;margin-left:auto;padding:0 16px;height:40px;border-radius:999px;text-decoration:none;font-weight:900;font-size:15px;color:#2a1206;background:linear-gradient(135deg,#ffe08a,#ffb347 45%,#ff7a1a);box-shadow:0 6px 18px rgba(255,122,26,.45);animation:heroPlayGlow 2.4s ease-in-out infinite}
+@media (max-width:720px){.header-play{display:inline-flex}.header-play+.menu-button{margin-left:10px}}
 .play-teaser .play-free{display:block;margin-top:14px;font-size:14px;color:var(--muted-dark)}
 </style>
 
@@ -79,6 +88,7 @@
     <a href="merch.html">Merch</a>
     <a class="nav-cta" href="#contact">Contact</a>
   </nav>
+  <a class="header-play" href="play.html"><span aria-hidden="true">▶</span> Play</a>
   <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
     <span></span><span></span><span></span>
   </button>
@@ -98,6 +108,7 @@
     </picture>
     <div class="fireflies" aria-hidden="true"></div>
     <div class="hero-fade" aria-hidden="true"></div>
+    <a class="poster-play" href="play.html"><span aria-hidden="true">▶</span> Play the game</a>
   </div>
 
   <div class="hero-copy">
@@ -110,6 +121,7 @@
       <div class="hero-actions">
         <a class="button primary" href="#watch"><span class="play" aria-hidden="true"></span>Watch the intro</a>
         <a class="button ghost" href="#family">Meet the family <span aria-hidden="true">→</span></a>
+        <a class="button primary hero-play" href="play.html"><span aria-hidden="true">🎮</span>Play the game</a>
       </div>
     </div>
   </div>
