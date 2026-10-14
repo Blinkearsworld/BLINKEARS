@@ -3,6 +3,7 @@
   <url><loc>https://blinkears.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://blinkears.com/play.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://blinkears.com/adventure.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://blinkears.com/band.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://blinkears.com/splash.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://blinkears.com/run.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://blinkears.com/merch.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
