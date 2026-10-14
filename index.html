@@ -32,6 +32,13 @@
 <link rel="preload" as="image" href="poster-wide.webp" media="(min-width: 721px)">
 <link rel="preload" as="image" href="poster-vertical.webp" media="(max-width: 720px)">
 <link rel="stylesheet" href="style.css?v=20">
+<style>
+.play-teaser{background:var(--night-2);color:#fff}
+.play-teaser .teaser-copy h2 em{color:var(--glow)}
+.play-teaser .teaser-copy>p:not(.kicker){color:var(--muted-dark)}
+.play-teaser .teaser-row a{box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.play-teaser .play-free{display:block;margin-top:14px;font-size:14px;color:var(--muted-dark)}
+</style>
 
 <script type="application/ld+json">
 {
@@ -68,6 +75,7 @@
     <a href="#shorts">Shorts</a>
     <a href="#world">Their World</a>
     <a href="#about">About</a>
+    <a href="play.html">Play</a>
     <a href="merch.html">Merch</a>
     <a class="nav-cta" href="#contact">Contact</a>
   </nav>
@@ -328,6 +336,24 @@
   </div>
 </section>
 
+<!-- GAME TEASER -->
+<section class="merch-teaser play-teaser" id="play" aria-labelledby="play-title">
+  <div class="wrap teaser-grid">
+    <div class="teaser-copy">
+      <p class="kicker reveal">New · Free game</p>
+      <h2 id="play-title" class="reveal">Play Blinkears.<br><em>Twelve lands of adventure.</em></h2>
+      <p class="reveal">Run, jump and flap your ears with Siko. Rescue Niki, Samba and Rumba, stomp the Gloom King and light the great lanterns.</p>
+      <a class="button primary reveal" href="play.html"><span class="play" aria-hidden="true"></span>Play now</a>
+      <span class="play-free reveal">Free in your browser · phone, tablet or computer</span>
+    </div>
+    <div class="teaser-row reveal">
+      <a href="play.html" aria-label="Play as Siko"><picture><source srcset="siko.webp" type="image/webp"><img src="siko.jpg" width="640" height="640" loading="lazy" alt="Siko"></picture></a>
+      <a href="play.html" aria-label="Play as Niki"><picture><source srcset="niki.webp" type="image/webp"><img src="niki.jpg" width="640" height="640" loading="lazy" alt="Niki"></picture></a>
+      <a href="play.html" aria-label="Play as Samba"><picture><source srcset="samba.webp" type="image/webp"><img src="samba.jpg" width="640" height="640" loading="lazy" alt="Samba"></picture></a>
+    </div>
+  </div>
+</section>
+
 <!-- MERCH TEASER -->
 <section class="merch-teaser" aria-labelledby="merch-title">
   <div class="wrap teaser-grid">
@@ -363,7 +389,7 @@
 <footer class="site-footer">
   <div class="footer-info"><span>© <span id="year">2026</span> BLINKEARS. All rights reserved.</span><span class="footer-credits"><span>Original Idea: Giorgi Imedashvili</span><i class="sep" aria-hidden="true"> · </i><span>Producer: Giorgi Imedashvili</span></span></div>
   <nav class="socials" aria-label="BLINKEARS on social media"><a href="https://www.youtube.com/@BLINKEARS" target="_blank" rel="noopener" aria-label="BLINKEARS on YouTube" title="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a><a href="https://www.tiktok.com/@blinkears.animation" target="_blank" rel="noopener" aria-label="BLINKEARS on TikTok" title="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.3v13.2a2.8 2.8 0 1 1-2-2.7V10.1a6.1 6.1 0 1 0 5.3 6.1V9.5a7.6 7.6 0 0 0 4.5 1.4V7.6a4.3 4.3 0 0 1-3.4-1.8z"/></svg></a><a href="https://www.instagram.com/blinkears/" target="_blank" rel="noopener" aria-label="BLINKEARS on Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a><a href="https://www.facebook.com/Blinkears" target="_blank" rel="noopener" aria-label="BLINKEARS on Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M24 12.1C24 5.4 18.6 0 12 0S0 5.4 0 12.1c0 6 4.4 11 10.1 11.9v-8.4H7.1v-3.5h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9v2.3h3.3l-.5 3.5h-2.8V24C19.6 23.1 24 18.1 24 12.1z"/></svg></a></nav>
-  <nav aria-label="Legal"><a href="merch.html">Merch</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="#top">Back to top ↑</a></nav>
+  <nav aria-label="Legal"><a href="play.html">Play</a><a href="merch.html">Merch</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="#top">Back to top ↑</a></nav>
 </footer>
 
 
