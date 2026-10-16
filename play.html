@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Play BLINKEARS — Free Games</title>
-<meta name="description" content="Free BLINKEARS games for kids: Flap Flap, Blinkears Band, Splash Battle, Blinkears Run and Blinkears Adventure. Play in your browser on phone, tablet or computer.">
+<meta name="description" content="8 free BLINKEARS games for kids and families, plus a birthday card maker: Firefly Jar, Flap Flap, Antenna Bridge, Mushroom Bounce, Splash Battle, Blinkears Band, Run and Adventure. Play in your browser.">
 <meta name="theme-color" content="#1f1329">
 <link rel="canonical" href="https://blinkears.com/play.html">
 <meta property="og:type" content="website">
@@ -48,6 +48,18 @@ header p{margin:0;color:var(--muted);font-size:17px}
 .play{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:999px;font-weight:900;font-size:18px;color:#2a1206;background:linear-gradient(135deg,#ffe08a,#ffb347 45%,#ff7a1a);box-shadow:0 8px 22px rgba(255,122,26,.4)}
 .new{position:relative}
 .new::after{content:"NEW";position:absolute;top:12px;right:12px;font:700 12px var(--display);letter-spacing:.1em;padding:5px 10px;border-radius:999px;background:#ff5a8a;color:#fff}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:960px;margin:0 auto 18px}
+.chips a{color:var(--cream);text-decoration:none;font:600 15px var(--display);padding:9px 14px;border-radius:999px;background:rgba(255,244,227,.08);border:1px solid rgba(255,244,227,.16)}
+.chips a:hover{background:rgba(255,179,71,.18);border-color:var(--ember)}
+.chips a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.group{max-width:960px;margin:0 auto 30px;scroll-margin-top:16px}
+.group-head{margin:0 4px 12px}
+.group-head h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,5vw,30px);margin:0 0 2px}
+.group-head p{margin:0;color:var(--muted);font-size:15.5px}
+.today{max-width:960px;margin:0 auto 30px}
+.today-h{font:700 15px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--ember);margin:0 4px 10px}
+.today .game{border:2px solid var(--ember);box-shadow:0 14px 40px rgba(255,122,26,.25)}
+@media (min-width:760px){.today .game{flex-direction:row}.today .game img{width:58%;aspect-ratio:16/9}.today .body{justify-content:center}}
 footer{text-align:center;color:var(--muted);font-size:14px;margin:26px auto 0;max-width:600px;line-height:1.5}
 @media (prefers-reduced-motion:reduce){.logo{animation:none}.game{transition:none}}
 </style>
@@ -59,7 +71,12 @@ footer{text-align:center;color:var(--muted);font-size:14px;margin:26px auto 0;ma
   <h1>Pick a game</h1>
   <p>Free to play · no sign-up · phone, tablet or computer</p>
 </header>
-<main class="games">
+<main>
+<nav class="chips" aria-label="Game types"><a href="#relax">🌙 Relax</a><a href="#challenge">🏆 Challenge a friend</a><a href="#adventure">🗺️ Adventures</a><a href="#make">🎂 Make &amp; send</a></nav>
+<section class="today" id="today" hidden aria-label="Today’s pick"><p class="today-h">⭐ Today’s pick</p><div id="todayCard"></div></section>
+<section class="group" id="relax" aria-labelledby="relax-h">
+  <div class="group-head"><h2 id="relax-h">🌙 Relax</h2><p>Calm games you can play any time, at your own pace.</p></div>
+  <div class="games">
   <a class="game new" href="jar.html">
     <img src="game-jar.webp" width="960" height="540" alt="A glass jar full of glowing orbs: fireflies, lanterns, a moon and a smiling sun, in the Blinkears' yard">
     <div class="body">
@@ -70,14 +87,29 @@ footer{text-align:center;color:var(--muted);font-size:14px;margin:26px auto 0;ma
       <span class="play">▶ Play Firefly Jar</span>
     </div>
   </a>
-  <a class="game" href="bounce.html">
-    <img src="game-bounce.webp" width="960" height="540" alt="Siko and Niki bouncing on mushrooms up into the sunset sky">
+  <a class="game" href="band.html">
+    <img src="game-band2.webp" width="960" height="540" alt="Rumba, Samba, Siko and Niki on stage with drums, guitar, trumpet and xylophone">
     <div class="body">
-      <span class="kicker">Slide to steer · challenge a friend</span>
-      <h2>Mushroom Bounce</h2>
-      <p>Bounce from mushroom to mushroom, up through the clouds to the stars. Pink ones bounce you super high, brown ones crumble!</p>
-      <div class="tags"><span>👆 Slide ↔</span><span>Ages 5+</span></div>
-      <span class="play">▶ Play Mushroom Bounce</span>
+      <span class="kicker">Music · tap and play</span>
+      <h2>Blinkears Band</h2>
+      <p>Rumba on drums, Samba on guitar, Siko on trumpet and Niki on xylophone. Jam, start a dance party or copy the band’s tune!</p>
+      <div class="tags"><span>👆 Tap to play</span><span>Ages 3+</span></div>
+      <span class="play">▶ Play Band</span>
+    </div>
+  </a>
+  </div>
+</section>
+<section class="group" id="challenge" aria-labelledby="challenge-h">
+  <div class="group-head"><h2 id="challenge-h">🏆 Challenge a friend</h2><p>Quick one-finger games. Beat your best, then send a challenge link!</p></div>
+  <div class="games">
+  <a class="game" href="flap.html">
+    <img src="game-flap.webp" width="960" height="540" alt="Siko, Niki, Samba and Rumba flapping their ears and flying between forest trees at sunset">
+    <div class="body">
+      <span class="kicker">One tap · just one more try!</span>
+      <h2>Flap Flap!</h2>
+      <p>Flap your ears and fly through the Blinkears’ forest. Catch fireflies, fly from day into night and beat your best!</p>
+      <div class="tags"><span>👆 Tap to flap</span><span>Ages 4+</span></div>
+      <span class="play">▶ Play Flap Flap</span>
     </div>
   </a>
   <a class="game" href="bridge.html">
@@ -90,34 +122,14 @@ footer{text-align:center;color:var(--muted);font-size:14px;margin:26px auto 0;ma
       <span class="play">▶ Play Antenna Bridge</span>
     </div>
   </a>
-  <a class="game" href="birthday.html">
-    <img src="game-birthday.webp" width="960" height="540" alt="Rumba, Samba, Siko and Niki in their yard with a birthday cake, balloons and a present">
+  <a class="game" href="bounce.html">
+    <img src="game-bounce.webp" width="960" height="540" alt="Siko and Niki bouncing on mushrooms up into the sunset sky">
     <div class="body">
-      <span class="kicker">Free card · send with one link</span>
-      <h2>Birthday Card</h2>
-      <p>Write a name and age. The Blinkears sing Happy Birthday, bring a cake with real candles to blow out and a surprise present!</p>
-      <div class="tags"><span>🎂 Make &amp; send</span><span>All ages</span></div>
-      <span class="play">▶ Make a card</span>
-    </div>
-  </a>
-  <a class="game" href="flap.html">
-    <img src="game-flap.webp" width="960" height="540" alt="Siko, Niki, Samba and Rumba flapping their ears and flying between forest trees at sunset">
-    <div class="body">
-      <span class="kicker">One tap · just one more try!</span>
-      <h2>Flap Flap!</h2>
-      <p>Flap your ears and fly through the Blinkears’ forest. Catch fireflies, fly from day into night and beat your best!</p>
-      <div class="tags"><span>👆 Tap to flap</span><span>Ages 4+</span></div>
-      <span class="play">▶ Play Flap Flap</span>
-    </div>
-  </a>
-  <a class="game" href="band.html">
-    <img src="game-band.webp" width="960" height="540" alt="Rumba, Samba, Siko and Niki on stage with drums, guitar, trumpet and xylophone">
-    <div class="body">
-      <span class="kicker">Music · tap and play</span>
-      <h2>Blinkears Band</h2>
-      <p>Rumba on drums, Samba on guitar, Siko on trumpet and Niki on xylophone. Jam, start a dance party or copy the band’s tune!</p>
-      <div class="tags"><span>👆 Tap to play</span><span>Ages 3+</span></div>
-      <span class="play">▶ Play Band</span>
+      <span class="kicker">Slide to steer · challenge a friend</span>
+      <h2>Mushroom Bounce</h2>
+      <p>Bounce from mushroom to mushroom, up through the clouds to the stars. Pink ones bounce you super high, brown ones crumble!</p>
+      <div class="tags"><span>👆 Slide ↔</span><span>Ages 5+</span></div>
+      <span class="play">▶ Play Mushroom Bounce</span>
     </div>
   </a>
   <a class="game" href="splash.html">
@@ -130,16 +142,11 @@ footer{text-align:center;color:var(--muted);font-size:14px;margin:26px auto 0;ma
       <span class="play">▶ Play Splash</span>
     </div>
   </a>
-  <a class="game" href="run.html">
-    <img src="game-run.webp" width="960" height="540" alt="Siko running from the Gloom King">
-    <div class="body">
-      <span class="kicker">One tap · quick fun</span>
-      <h2>Blinkears Run</h2>
-      <p>Pick Siko, Niki, Samba or Rumba and run! Rescue little fireflies and stay ahead of the hungry Gloom King.</p>
-      <div class="tags"><span>👆 Tap to jump</span><span>Ages 4+</span></div>
-      <span class="play">▶ Play Run</span>
-    </div>
-  </a>
+  </div>
+</section>
+<section class="group" id="adventure" aria-labelledby="adventure-h">
+  <div class="group-head"><h2 id="adventure-h">🗺️ Adventures</h2><p>Run, jump and explore the Blinkears’ world.</p></div>
+  <div class="games">
   <a class="game" href="adventure.html">
     <img src="game-adventure.webp" width="960" height="540" alt="The Blinkears family ready for adventure">
     <div class="body">
@@ -150,7 +157,40 @@ footer{text-align:center;color:var(--muted);font-size:14px;margin:26px auto 0;ma
       <span class="play">▶ Play Adventure</span>
     </div>
   </a>
+  <a class="game" href="run.html">
+    <img src="game-run.webp" width="960" height="540" alt="Siko running from the Gloom King">
+    <div class="body">
+      <span class="kicker">One tap · quick fun</span>
+      <h2>Blinkears Run</h2>
+      <p>Pick Siko, Niki, Samba or Rumba and run! Rescue little fireflies and stay ahead of the hungry Gloom King.</p>
+      <div class="tags"><span>👆 Tap to jump</span><span>Ages 4+</span></div>
+      <span class="play">▶ Play Run</span>
+    </div>
+  </a>
+  </div>
+</section>
+<section class="group" id="make" aria-labelledby="make-h">
+  <div class="group-head"><h2 id="make-h">🎂 Make &amp; send</h2><p>Make something special for someone you love.</p></div>
+  <div class="games">
+  <a class="game" href="birthday.html">
+    <img src="game-birthday.webp" width="960" height="540" alt="Rumba, Samba, Siko and Niki in their yard with a birthday cake, balloons and a present">
+    <div class="body">
+      <span class="kicker">Free card · send with one link</span>
+      <h2>Birthday Card</h2>
+      <p>Write a name and age. The Blinkears sing Happy Birthday, bring a cake with real candles to blow out and a surprise present!</p>
+      <div class="tags"><span>🎂 Make &amp; send</span><span>All ages</span></div>
+      <span class="play">▶ Make a card</span>
+    </div>
+  </a>
+  </div>
+</section>
 </main>
 <footer>Your stars and best scores are saved on this device. Watch the cartoons on <a href="https://www.youtube.com/@BLINKEARS" target="_blank" rel="noopener" style="color:var(--ember)">YouTube</a>.</footer>
+<script>
+/* Today's pick: one game is featured each day (same for everyone on that day) */
+(()=>{const ids=['jar','flap','bridge','bounce','band','splash','run','adventure','birthday'];const d=new Date();const n=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5);
+ const k=ids[n%ids.length];const src=document.querySelector('.group a[href="'+k+'.html"]');if(!src)return;const c=src.cloneNode(true);c.classList.remove('new');
+ document.getElementById('todayCard').appendChild(c);document.getElementById('today').hidden=false;})();
+</script>
 </body>
 </html>

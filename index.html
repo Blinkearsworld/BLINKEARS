@@ -36,7 +36,14 @@
 .play-teaser{background:var(--night-2);color:#fff}
 .play-teaser .teaser-copy h2 em{color:var(--glow)}
 .play-teaser .teaser-copy>p:not(.kicker){color:var(--muted-dark)}
-.play-teaser .teaser-row a{box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.play-teaser .game-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.play-teaser .game-grid a{display:block;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.45);transition:transform .3s}
+.play-teaser .game-grid a:nth-child(even){transform:translateY(22px)}
+.play-teaser .game-grid a:hover{transform:translateY(-5px) rotate(-1deg)}
+.play-teaser .game-grid a:nth-child(even):hover{transform:translateY(17px) rotate(1deg)}
+.play-teaser .game-grid img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.play-teaser .game-grid a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.play-teaser .game-grid a,.play-teaser .game-grid a:hover{transform:none}}
 .hero-actions{flex-wrap:wrap}
 .hero-play{background:linear-gradient(135deg,#ffe08a,#ffb347 45%,#ff7a1a);animation:heroPlayGlow 2.4s ease-in-out infinite}
 @keyframes heroPlayGlow{50%{box-shadow:0 0 0 6px rgba(255,200,97,.25),0 16px 40px rgba(255,122,26,.55)}}
@@ -124,7 +131,7 @@
       <div class="hero-actions">
         <a class="button primary" href="#watch"><span class="play" aria-hidden="true"></span>Watch the intro</a>
         <a class="button ghost" href="#family">Meet the family <span aria-hidden="true">→</span></a>
-        <a class="button primary hero-play" href="play.html"><span aria-hidden="true">🎮</span>Play the game</a>
+        <a class="button primary hero-play" href="play.html"><span aria-hidden="true">🎮</span>Play free games</a>
       </div>
     </div>
   </div>
@@ -355,16 +362,17 @@
 <section class="merch-teaser play-teaser" id="play" aria-labelledby="play-title">
   <div class="wrap teaser-grid">
     <div class="teaser-copy">
-      <p class="kicker reveal">New · Free game</p>
-      <h2 id="play-title" class="reveal">Play Blinkears.<br><em>Twelve lands of adventure.</em></h2>
-      <p class="reveal">Run, jump and flap your ears with Siko. Rescue Niki, Samba and Rumba, stomp the Gloom King and light the great lanterns.</p>
-      <a class="button primary reveal" href="play.html"><span class="play" aria-hidden="true"></span>Play now</a>
+      <p class="kicker reveal">Free games · no sign-up</p>
+      <h2 id="play-title" class="reveal">Play with the Blinkears.<br><em>8 free games.</em></h2>
+      <p class="reveal">Flap your ears through the forest, build antenna bridges, fill a jar with fireflies or make a birthday card for someone you love. Then challenge a friend!</p>
+      <a class="button primary reveal" href="play.html"><span class="play" aria-hidden="true"></span>See all games</a>
       <span class="play-free reveal">Free in your browser · phone, tablet or computer</span>
     </div>
-    <div class="teaser-row reveal">
-      <a href="play.html" aria-label="Play as Siko"><picture><source srcset="siko.webp" type="image/webp"><img src="siko.jpg" width="640" height="640" loading="lazy" alt="Siko"></picture></a>
-      <a href="play.html" aria-label="Play as Niki"><picture><source srcset="niki.webp" type="image/webp"><img src="niki.jpg" width="640" height="640" loading="lazy" alt="Niki"></picture></a>
-      <a href="play.html" aria-label="Play as Samba"><picture><source srcset="samba.webp" type="image/webp"><img src="samba.jpg" width="640" height="640" loading="lazy" alt="Samba"></picture></a>
+    <div class="game-grid reveal">
+      <a href="jar.html"><img src="game-jar.webp" width="960" height="540" loading="lazy" alt="Firefly Jar"></a>
+      <a href="flap.html"><img src="game-flap.webp" width="960" height="540" loading="lazy" alt="Flap Flap!"></a>
+      <a href="bridge.html"><img src="game-bridge.webp" width="960" height="540" loading="lazy" alt="Antenna Bridge"></a>
+      <a href="birthday.html"><img src="game-birthday.webp" width="960" height="540" loading="lazy" alt="Birthday Card"></a>
     </div>
   </div>
 </section>
