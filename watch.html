@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Watch BLINKEARS — Cartoons &amp; Shorts</title>
+<meta name="description" content="Watch BLINKEARS cartoons and shorts: Rumba, Samba, Siko and Niki in short family comedies. Free to watch right here.">
+<meta name="theme-color" content="#1f1329">
+<link rel="canonical" href="https://blinkears.com/watch.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BLINKEARS">
+<meta property="og:title" content="Watch BLINKEARS — cartoons and shorts">
+<meta property="og:description" content="Short family comedies with Rumba, Samba, Siko and Niki.">
+<meta property="og:url" content="https://blinkears.com/watch.html">
+<meta property="og:image" content="https://blinkears.com/meet-the-blinkears-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800;900&display=swap">
+<style>
+:root{--night:#1f1329;--card:#2b1a38;--ember:#ffb347;--cream:#fff4e3;--muted:#d8c4d4;--pink:#ff5a8a;
+  --display:"Fredoka","Nunito",system-ui,sans-serif;--body:"Nunito",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;min-height:100%}
+body{background:radial-gradient(120% 70% at 50% 0%,#4a2a5e 0%,var(--night) 65%);color:var(--cream);font-family:var(--body);
+  padding:calc(env(safe-area-inset-top,0px) + 14px) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 28px) max(16px,env(safe-area-inset-left,0px));min-height:100vh}
+a{color:inherit}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;max-width:960px;margin:0 auto}
+.pillbtn{color:var(--cream);text-decoration:none;font-weight:800;font-size:15px;padding:9px 14px;border-radius:999px;background:rgba(255,244,227,.08);border:1px solid rgba(255,244,227,.14)}
+.pillbtn.play{background:linear-gradient(135deg,#ffe08a,#ffb347 45%,#ff7a1a);color:#2a1206;border-color:transparent}
+header{text-align:center;max-width:960px;margin:6px auto 20px}
+.logo{width:min(80vw,420px);height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.45))}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(26px,6vw,40px);margin:2px 0 6px}
+header p{margin:0 0 12px;color:var(--muted);font-size:17px}
+.sub{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font:700 16px var(--display);padding:10px 18px;border-radius:999px;background:#ff2d2d;color:#fff;box-shadow:0 8px 22px rgba(255,45,45,.35)}
+.feat{max-width:960px;margin:0 auto 26px}
+.feat-h{font:700 15px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--ember);margin:0 4px 10px}
+.feat-box{display:grid;gap:0;background:var(--card);border:2px solid var(--ember);border-radius:24px;overflow:hidden;box-shadow:0 14px 40px rgba(255,122,26,.22)}
+@media (min-width:760px){.feat-box{grid-template-columns:1.5fr 1fr}}
+.feat-box.vert{max-width:760px;margin:0 auto}
+@media (min-width:760px){.feat-box.vert{grid-template-columns:300px 1fr}}
+.feat-info{padding:16px 18px 18px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.feat-info h2{font:700 26px/1.15 var(--display);margin:0}
+.feat-info p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.45}
+.date{font:600 12px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--ember)}
+.player{position:relative;aspect-ratio:16/9;background:#000;cursor:pointer;border:0;padding:0;display:block;width:100%}
+.player.vert{aspect-ratio:9/16}
+.player img{width:100%;height:100%;object-fit:cover;display:block}
+.player iframe,.player video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pbtn{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:rgba(255,45,45,.92);box-shadow:0 8px 30px rgba(0,0,0,.45);display:grid;place-items:center}
+.pbtn::after{content:"";border-left:24px solid #fff;border-top:15px solid transparent;border-bottom:15px solid transparent;margin-left:6px}
+.player:hover .pbtn{transform:scale(1.06)}
+.player:focus-visible,.tile:focus-visible,.tabs button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:960px;margin:0 auto 14px}
+.tabs button{border:1px solid rgba(255,244,227,.16);background:rgba(255,244,227,.08);color:var(--cream);font:600 15px var(--display);padding:8px 14px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:linear-gradient(135deg,#ffe08a,#ffb347 45%,#ff7a1a);color:#2a1206;border-color:transparent}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:960px;margin:0 auto}
+@media (min-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+.grid.shorts{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (min-width:700px){.grid.shorts{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.tile{display:flex;flex-direction:column;background:var(--card);border:1px solid rgba(255,244,227,.12);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 10px 26px rgba(0,0,0,.35);cursor:pointer;padding:0;text-align:left;font:inherit;transition:transform .2s}
+.tile:hover{transform:translateY(-3px)}
+.thumb{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
+.tile.s .thumb{aspect-ratio:9/16}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb .mini{position:absolute;right:8px;bottom:8px;width:34px;height:34px;border-radius:50%;background:rgba(255,45,45,.92);display:grid;place-items:center}
+.thumb .mini::after{content:"";border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.badge{position:absolute;left:8px;top:8px;font:700 10.5px var(--display);letter-spacing:.08em;padding:3px 8px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff}
+.badge.new{background:var(--pink)}
+.tb{padding:9px 11px 11px;display:flex;flex-direction:column;gap:2px}
+.tb b{font:700 16px/1.2 var(--display);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tb small{font-size:12px;font-weight:800;color:var(--muted)}
+.empty{max-width:640px;margin:10px auto;text-align:center;color:var(--muted);font-size:15.5px;line-height:1.5}
+.all{max-width:960px;margin:34px auto 0}
+.all h2{font:700 26px var(--display);margin:0 4px 4px}
+.all p{margin:0 4px 12px;color:var(--muted)}
+.all .player{border-radius:20px;overflow:hidden;border:1px solid rgba(255,244,227,.12)}
+/* pop-up player */
+.modal{position:fixed;inset:0;z-index:10;background:rgba(10,5,16,.88);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) 16px max(16px,env(safe-area-inset-bottom,0px))}
+.mbox{width:min(100%,1000px);display:flex;flex-direction:column;gap:10px}
+.mbox.vert{width:min(100%,calc((100dvh - 120px)*9/16),420px)}
+.mframe{position:relative;aspect-ratio:16/9;background:#000;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.mbox.vert .mframe{aspect-ratio:9/16}
+.mframe iframe,.mframe video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mbar{display:flex;align-items:center;gap:10px}
+.mbar b{flex:1;font:700 18px var(--display);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mbar button,.mbar a{border:1px solid rgba(255,244,227,.2);background:rgba(255,244,227,.1);color:var(--cream);font:600 15px var(--display);border-radius:12px;padding:8px 12px;cursor:pointer;text-decoration:none;white-space:nowrap}
+footer{text-align:center;color:var(--muted);font-size:14px;margin:30px auto 0;max-width:600px;line-height:1.5}
+@media (prefers-reduced-motion:reduce){.tile{transition:none}}
+</style>
+</head>
+<body>
+<div class="top"><a class="pillbtn" href="index.html">← blinkears.com</a><a class="pillbtn play" href="play.html">🎮 Play</a></div>
+<header>
+  <img class="logo" src="blinkears-logo.webp" width="900" height="297" alt="BLINKEARS">
+  <h1>Watch the Blinkears</h1>
+  <p>Short family comedies with Rumba, Samba, Siko and Niki</p>
+  <a class="sub" href="https://www.youtube.com/@BLINKEARS?sub_confirmation=1" target="_blank" rel="noopener">▶ Subscribe on YouTube</a>
+</header>
+
+<main>
+  <section class="feat" id="feat" aria-label="Newest video">
+    <p class="feat-h">⭐ Newest</p>
+    <div class="feat-box" id="featBox"></div>
+  </section>
+
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Video types" hidden>
+    <button type="button" role="tab" data-t="all" aria-selected="true">All</button>
+    <button type="button" role="tab" data-t="ep" aria-selected="false">🎬 Episodes</button>
+    <button type="button" role="tab" data-t="short" aria-selected="false">📱 Shorts</button>
+  </nav>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>New episodes are on the way! Meanwhile, watch everything on the channel below.</p>
+
+  <section class="all" aria-labelledby="all-h">
+    <h2 id="all-h">📺 All videos</h2>
+    <p>Everything on our YouTube channel, newest first.</p>
+    <button class="player" id="allPlayer" type="button" aria-label="Play all BLINKEARS videos"><img src="meet-the-blinkears-poster.jpg" alt="" loading="lazy" style="object-position:50% 30%"><span class="pbtn"></span></button>
+  </section>
+</main>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="mbox" id="mbox">
+    <div class="mframe" id="mframe"></div>
+    <div class="mbar"><b id="mTitle"></b><a id="mYT" target="_blank" rel="noopener">YouTube ↗</a><button type="button" id="mClose">✕ Close</button></div>
+  </div>
+</div>
+
+<footer>New videos appear here by themselves. Follow the family on <a href="https://www.youtube.com/@BLINKEARS" target="_blank" rel="noopener" style="color:var(--ember)">YouTube</a>.</footer>
+
+<script>
+(()=>{
+const CH='UCrTKH9dZbPLrf3i7DkP1aDQ',UPLOADS='UU'+CH.slice(2);
+const SOURCES=['https://raw.githubusercontent.com/Blinkearsworld/blinkears/main/videos.json','videos.json'];
+// the intro that lives on our own site, always shown
+const INTRO={id:'local-intro',local:'meet-the-blinkears.mp4',poster:'meet-the-blinkears-poster.jpg',title:'Meet the Blinkears',desc:'You caught them at a bad moment. They’d like to make a good first impression. It’s going great.',short:true,published:'2026-01-01T00:00:00Z',label:'Episode 00 · The Introduction'};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=d=>{try{return new Date(d).toLocaleDateString('en',{day:'numeric',month:'short',year:'numeric'})}catch(e){return ''}};
+const thumb=v=>v.local?v.poster:`https://i.ytimg.com/vi/${v.id}/${v.short?'oar2':'hqdefault'}.jpg`;
+const thumbFallback=v=>`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
+const embed=(v,auto)=>`https://www.youtube-nocookie.com/embed/${v.id}?rel=0&modestbranding=1&playsinline=1${auto?'&autoplay=1':''}`;
+const isNew=v=>!v.local&&(Date.now()-new Date(v.published))<14*864e5;
+let list=[];
+
+function media(v){if(v.local)return `<video src="${v.local}" poster="${v.poster}" controls autoplay playsinline></video>`;
+ return `<iframe src="${embed(v,true)}" title="${esc(v.title)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;}
+function imgTag(v,cls=''){return `<img src="${thumb(v)}" alt="" loading="lazy"${v.local?'':` onerror="if(!this.dataset.f){this.dataset.f=1;this.src='${thumbFallback(v)}'}"`}>`;}
+
+function renderFeat(){const v=list.find(x=>!x.local)||INTRO;const box=$('featBox');box.className='feat-box'+(v.short?' vert':'');
+ box.innerHTML=`<button class="player${v.short?' vert':''}" type="button" aria-label="Play ${esc(v.title)}">${imgTag(v)}<span class="pbtn"></span></button>
+ <div class="feat-info"><span class="date">${v.local?esc(v.label):fmt(v.published)}${v.short&&!v.local?' · Short':''}</span><h2>${esc(v.title)}</h2>${v.desc?`<p>${esc(v.desc)}</p>`:''}</div>`;
+ const p=box.querySelector('.player');p.onclick=()=>{p.innerHTML=media(v);p.onclick=null;p.style.cursor='default';};}
+
+function renderGrid(kind){const g=$('grid');const sh=v=>v.short&&!v.local;const items=list.filter(v=>kind==='all'||(kind==='short'?sh(v):!sh(v)));
+ g.className='grid'+(kind==='short'?' shorts':'');
+ g.innerHTML=items.map((v,i)=>`<button class="tile${v.short&&kind==='short'?' s':''}" type="button" data-i="${list.indexOf(v)}"><span class="thumb">${imgTag(v)}${isNew(v)?'<span class="badge new">NEW</span>':(v.short&&!v.local)?'<span class="badge">SHORT</span>':''}<span class="mini"></span></span><span class="tb"><b>${esc(v.title)}</b><small>${v.local?esc(v.label):fmt(v.published)}</small></span></button>`).join('');
+ g.querySelectorAll('.tile').forEach(b=>b.onclick=()=>openV(list[+b.dataset.i]));}
+
+function openV(v){$('mbox').className='mbox'+(v.short?' vert':'');$('mframe').innerHTML=media(v);$('mTitle').textContent=v.title;
+ const yt=$('mYT');if(v.local){yt.hidden=true;}else{yt.hidden=false;yt.href=v.short?`https://www.youtube.com/shorts/${v.id}`:`https://www.youtube.com/watch?v=${v.id}`;}
+ $('modal').hidden=false;document.body.style.overflow='hidden';$('mClose').focus();}
+function closeV(){$('mframe').innerHTML='';$('modal').hidden=true;document.body.style.overflow='';}
+$('mClose').onclick=closeV;$('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeV();});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('modal').hidden)closeV();});
+
+$('allPlayer').onclick=function(){this.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=${UPLOADS}&rel=0&autoplay=1&playsinline=1" title="All BLINKEARS videos" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;this.onclick=null;this.style.cursor='default';};
+
+const tabs=[...document.querySelectorAll('#tabs button')];
+tabs.forEach(b=>b.onclick=()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x===b));renderGrid(b.dataset.t);});
+
+async function load(){for(const u of SOURCES){try{const r=await fetch(u+'?t='+Math.floor(Date.now()/3e5),{cache:'no-store'});if(!r.ok)continue;const d=await r.json();if(d&&Array.isArray(d.videos))return d.videos;}catch(e){}}return [];}
+load().then(v=>{list=v.filter(x=>x&&x.id).concat([INTRO]);
+ renderFeat();renderGrid('all');
+ const hasShort=list.some(x=>x.short&&!x.local),hasEp=list.some(x=>!(x.short&&!x.local));$('tabs').hidden=!(hasShort&&hasEp&&list.length>3);
+ $('empty').hidden=list.length>1;});
+})();
+</script>
+</body>
+</html>
