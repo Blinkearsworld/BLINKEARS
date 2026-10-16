@@ -64,8 +64,8 @@
 .poster-play{display:none;position:absolute;z-index:3;right:var(--gutter);bottom:150px;align-items:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;text-decoration:none;font-weight:900;font-size:18px;color:#2a1206;background:linear-gradient(135deg,#ffe08a,#ffb347 45%,#ff7a1a);box-shadow:0 12px 34px rgba(255,122,26,.55),inset 0 1px 0 rgba(255,255,255,.5);animation:heroPlayGlow 2.4s ease-in-out infinite}
 .poster-play:hover{transform:translateY(-2px)}
 @media (max-width:720px){.poster-play{display:inline-flex;right:auto;left:50%;transform:translateX(-50%);bottom:84px;font-size:17px;min-height:52px;white-space:nowrap}.poster-play:hover{transform:translateX(-50%)}}
-.header-play{display:none;align-items:center;gap:6px;margin-left:auto;padding:0 16px;height:40px;border-radius:999px;text-decoration:none;font-weight:900;font-size:15px;color:#2a1206;background:linear-gradient(135deg,#ffe08a,#ffb347 45%,#ff7a1a);box-shadow:0 6px 18px rgba(255,122,26,.45);animation:heroPlayGlow 2.4s ease-in-out infinite}
-.header-watch{display:none;align-items:center;gap:6px;margin-left:auto;padding:0 14px;height:40px;border-radius:999px;text-decoration:none;font-weight:900;font-size:15px;color:#fff;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
+.header-play{display:none;align-items:center;gap:6px;margin-left:auto;padding:0 14px;height:40px;border-radius:999px;text-decoration:none;font-weight:900;font-size:15px;color:#fff;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
+.header-watch{display:none;align-items:center;gap:6px;margin-left:auto;padding:0 16px;height:40px;border-radius:999px;text-decoration:none;font-weight:900;font-size:15px;color:#2a1206;background:linear-gradient(135deg,#ffe08a,#ffb347 45%,#ff7a1a);box-shadow:0 6px 18px rgba(255,122,26,.45);animation:heroPlayGlow 2.4s ease-in-out infinite}
 .header-watch+.header-play{margin-left:8px}
 @media (max-width:720px){.site-header{gap:8px!important}.header-play,.header-watch{display:inline-flex;padding:0 12px;font-size:14px;height:38px}.header-watch+.header-play{margin-left:0}.header-play+.menu-button{margin-left:0}.wordmark{font-size:20px!important;letter-spacing:.02em!important}}
 @media (max-width:370px){.header-watch span{display:none}.header-play,.header-watch{padding:0 10px}.wordmark{font-size:18px!important}}
@@ -161,8 +161,8 @@
   <div class="hero-copy">
     <div class="hero-head reveal">
       <nav class="whatsnew" aria-label="What's new">
-        <a class="wn" id="wnGame" href="jar.html"><i>NEW GAME</i><span>Firefly Jar</span></a>
         <a class="wn" id="wnShort" href="watch.html" hidden><i>NEW SHORT</i><span></span></a>
+        <a class="wn" id="wnGame" href="jar.html"><i>NEW GAME</i><span>Firefly Jar</span></a>
       </nav>
       <p class="kicker">An original animated family comedy</p>
       <h1>One family.<br><span class="glow-text">Everyday chaos.</span></h1>
@@ -172,7 +172,7 @@
       <div class="hero-actions">
         <a class="button primary" href="#watch"><span class="play" aria-hidden="true"></span>Watch the intro</a>
         <a class="button ghost" href="#family">Meet the family <span aria-hidden="true">→</span></a>
-        <a class="button primary hero-play" href="play.html"><span aria-hidden="true">🎮</span>Play free games</a>
+        <a class="button ghost" href="play.html"><span aria-hidden="true">🎮</span>Play free games</a>
       </div>
     </div>
   </div>
@@ -443,7 +443,7 @@
  const clean=s=>{let c=String(s||'').replace(/#[\p{L}\p{N}_]+/gu,'').replace(/\s+/g,' ').trim();const r=c.replace(/^BLINKEARS[\s\-–:|·🧡❤️💛]*/u,'').trim();return r||c;};
  (async()=>{for(const u of ['https://raw.githubusercontent.com/Blinkearsworld/blinkears/main/videos.json','videos.json']){try{
   const r=await fetch(u,{cache:'no-store'});if(!r.ok)continue;const v=((await r.json()).videos||[]).find(x=>x&&x.id);if(!v)return;
-  const t=clean(v.title);if(!t)return;const el=document.getElementById('wnShort');el.querySelector('span').textContent=t;el.hidden=false;return;}catch(e){}}})();
+  const t=clean(v.title);if(!t)return;const el=document.getElementById('wnShort');el.querySelector('span').textContent=t;if(/\bSE?\d+\s*EP?\d+/i.test(v.title||''))el.querySelector('i').textContent='NEW EPISODE';el.hidden=false;return;}catch(e){}}})();
 })();
 </script>
 <script>
