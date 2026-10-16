@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>BLINKEARS — An Original Animated Family Comedy</title>
-<meta name="description" content="BLINKEARS is a warm animated family comedy about Rumba, Samba, Siko and Niki — a family whose ordinary days have a habit of going hilariously wrong.">
+<meta name="description" content="BLINKEARS is a warm animated family comedy about Rumba, Samba, Siko and Niki. Watch the shorts, play free games and make a birthday card with the Blinkears.">
 <meta name="author" content="Giorgi Imedashvili">
 <meta name="theme-color" content="#140d08">
 <link rel="canonical" href="https://blinkears.com/">
@@ -36,6 +36,19 @@
 .play-teaser{background:var(--night-2);color:#fff}
 .play-teaser .teaser-copy h2 em{color:var(--glow)}
 .play-teaser .teaser-copy>p:not(.kicker){color:var(--muted-dark)}
+.latest{display:grid;gap:16px}
+.latest-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.latest-card{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:#fff;border:0;background:none;padding:0;font:inherit;text-align:left;cursor:pointer}
+.latest-card b{font-size:15px;line-height:1.25;font-weight:800;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.lc-thumb{position:relative;display:block;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:rgba(0,0,0,.25);box-shadow:0 16px 40px rgba(110,35,5,.3)}
+.lc-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.lc-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lc-play{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:rgba(255,45,45,.92);box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.lc-play::after{content:"";position:absolute;left:21px;top:16px;border-left:17px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent}
+.lc-ph{background:linear-gradient(160deg,#ffb347,#c2410c)}
+.latest-card:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:18px}
+.latest-all{justify-self:start}
+@media (max-width:520px){.latest-grid{gap:8px}.latest-card b{font-size:13px}.lc-play{transform:scale(.8)}}
 .play-teaser .game-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .play-teaser .game-grid a{display:block;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.45);transition:transform .3s}
 .play-teaser .game-grid a:nth-child(even){transform:translateY(22px)}
@@ -272,28 +285,15 @@
       <p class="kicker light reveal">The format</p>
       <h2 class="reveal">30 seconds.<br>One problem.<br><span class="underline">Bad decisions.</span></h2>
       <p class="reveal">BLINKEARS shorts are compact family-comedy stories built around one instantly recognizable situation and one satisfying payoff. Visual first, dialogue light, easy to understand anywhere.</p>
+      <p class="kicker light reveal latest-k" style="margin-top:18px">New on the channel</p>
       <ul class="format-row reveal"><li>Family comedy</li><li>Visual humor</li><li>Short-form</li><li>Dialogue light</li></ul>
     </div>
 
-    <div class="short-cards" aria-label="Upcoming shorts">
-      <article class="short reveal">
-        <div class="short-top"><span class="timer">00:30</span><span class="ep">EP 01</span></div>
-        <h3>The Quick Fix</h3>
-        <p>Rumba skips one tiny step. The house notices.</p>
-        <div class="short-foot"><span class="soon"><i></i>Coming soon</span><span class="bar"><b style="width:72%"></b></span></div>
-      </article>
-      <article class="short reveal">
-        <div class="short-top"><span class="timer">00:30</span><span class="ep">EP 02</span></div>
-        <h3>Who Ate It?</h3>
-        <p>Four suspects. One empty plate. Zero confessions.</p>
-        <div class="short-foot"><span class="soon"><i></i>Coming soon</span><span class="bar"><b style="width:48%"></b></span></div>
-      </article>
-      <article class="short reveal">
-        <div class="short-top"><span class="timer">00:30</span><span class="ep">EP 03</span></div>
-        <h3>Just One Chore</h3>
-        <p>Siko finds the fastest possible way to do it. Unfortunately.</p>
-        <div class="short-foot"><span class="soon"><i></i>Coming soon</span><span class="bar"><b style="width:30%"></b></span></div>
-      </article>
+    <div class="latest" aria-label="Latest shorts">
+      <div class="latest-grid" id="latestGrid">
+        <a class="latest-card" href="watch.html"><span class="lc-thumb lc-ph"><span class="lc-play"></span></span><b>Watch the latest shorts</b></a>
+      </div>
+      <a class="button primary latest-all" href="watch.html"><span class="play" aria-hidden="true"></span>See all videos</a>
     </div>
   </div>
 </section>
@@ -318,23 +318,6 @@
   </div>
 </section>
 
-<!-- POSTER -->
-<section class="poster-section">
-  <div class="wrap">
-    <div class="poster-copy reveal">
-      <p class="kicker">BLINKEARS</p>
-      <h2>A family you recognize.<br><em>A species you don’t.</em></h2>
-    </div>
-    <figure class="poster-frame reveal">
-      <picture>
-        <source srcset="poster-wide.webp" type="image/webp">
-        <img src="poster-wide.jpg" width="1536" height="864" loading="lazy"
-             alt="Wide BLINKEARS poster: the family sitting together above the sea at golden hour">
-      </picture>
-    </figure>
-  </div>
-</section>
-
 <!-- ABOUT -->
 <section id="about" class="about-section">
   <div class="wrap about-grid">
@@ -344,7 +327,7 @@
     </div>
     <div class="about-copy">
       <p class="reveal">BLINKEARS is a character-driven animated comedy about family life: the tiny misunderstandings, habits, shortcuts, rivalries and affectionate disasters that feel familiar at any age.</p>
-      <p class="reveal lead">The world is stylized. The family dynamics are real.</p>
+      <p class="reveal lead">A family you recognize. A species you don’t.<br>The world is stylized. The family dynamics are real.</p>
       <dl class="language-note reveal">
         <div><dt>One character</dt><dd>a Blinkear</dd></div>
         <div><dt>Many</dt><dd>Blinkears</dd></div>
@@ -400,7 +383,7 @@
   <div class="contact-inner">
     <p class="kicker light reveal">Follow the family</p>
     <h2 class="reveal">BLINKEARS</h2>
-    <p class="reveal">Shorts, character stories and family chaos are on the way.</p>
+    <p class="reveal">New shorts, free games and plenty of family chaos. Say hello any time.</p>
     <div class="contact-actions reveal">
       <a class="button primary" href="mailto:blinkears@gmail.com">blinkears@gmail.com</a>
       <button class="button ghost copy-mail" type="button" data-email="blinkears@gmail.com">Copy email</button>
@@ -412,7 +395,7 @@
 <footer class="site-footer">
   <div class="footer-info"><span>© <span id="year">2026</span> BLINKEARS. All rights reserved.</span><span class="footer-credits"><span>Original Idea: Giorgi Imedashvili</span><i class="sep" aria-hidden="true"> · </i><span>Producer: Giorgi Imedashvili</span></span></div>
   <nav class="socials" aria-label="BLINKEARS on social media"><a href="https://www.youtube.com/@BLINKEARS" target="_blank" rel="noopener" aria-label="BLINKEARS on YouTube" title="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a><a href="https://www.tiktok.com/@blinkears.animation" target="_blank" rel="noopener" aria-label="BLINKEARS on TikTok" title="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.3v13.2a2.8 2.8 0 1 1-2-2.7V10.1a6.1 6.1 0 1 0 5.3 6.1V9.5a7.6 7.6 0 0 0 4.5 1.4V7.6a4.3 4.3 0 0 1-3.4-1.8z"/></svg></a><a href="https://www.instagram.com/blinkears/" target="_blank" rel="noopener" aria-label="BLINKEARS on Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a><a href="https://www.facebook.com/Blinkears" target="_blank" rel="noopener" aria-label="BLINKEARS on Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M24 12.1C24 5.4 18.6 0 12 0S0 5.4 0 12.1c0 6 4.4 11 10.1 11.9v-8.4H7.1v-3.5h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9v2.3h3.3l-.5 3.5h-2.8V24C19.6 23.1 24 18.1 24 12.1z"/></svg></a></nav>
-  <nav aria-label="Legal"><a href="play.html">Play</a><a href="merch.html">Merch</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="#top">Back to top ↑</a></nav>
+  <nav aria-label="Legal"><a href="watch.html">Watch</a><a href="play.html">Play</a><a href="merch.html">Merch</a><a href="privacy.html#parents">For parents</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="#top">Back to top ↑</a></nav>
 </footer>
 
 
@@ -427,5 +410,17 @@
 </dialog>
 <div class="toast" role="status" aria-live="polite"></div>
 <script src="app.js?v=20" defer></script>
+<script>
+/* Latest shorts from the YouTube channel (same list the Watch page uses) */
+(()=>{const g=document.getElementById('latestGrid');if(!g)return;
+ const clean=s=>{let c=String(s||'').replace(/#[\p{L}\p{N}_]+/gu,'').replace(/\s+/g,' ').trim();const r=c.replace(/^BLINKEARS[\s\-–:|·🧡❤️💛]*/u,'').trim();return r||c||'BLINKEARS';};
+ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const src=['https://raw.githubusercontent.com/Blinkearsworld/blinkears/main/videos.json','videos.json'];
+ (async()=>{for(const u of src){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok)continue;const d=await r.json();const v=(d.videos||[]).filter(x=>x&&x.id).slice(0,3);if(!v.length)return;
+  g.innerHTML=v.map(x=>`<button class="latest-card" type="button" data-id="${esc(x.id)}" aria-label="Play ${esc(clean(x.title))}"><span class="lc-thumb"><img src="https://i.ytimg.com/vi/${esc(x.id)}/oar2.jpg" alt="" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/${esc(x.id)}/hqdefault.jpg'}"><span class="lc-play"></span></span><b>${esc(clean(x.title))}</b></button>`).join('');
+  g.querySelectorAll('.latest-card').forEach(b=>b.onclick=()=>{const th=b.querySelector('.lc-thumb');if(th.querySelector('iframe'))return;th.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&playsinline=1&rel=0" title="BLINKEARS short" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;});
+  return;}catch(e){}}})();})();
+</script>
+
 </body>
 </html>
