@@ -42,6 +42,8 @@ header p{margin:0 0 12px;color:var(--muted);font-size:17px}
 .feat-box{display:grid;gap:0;background:var(--card);border:2px solid var(--ember);border-radius:24px;overflow:hidden;box-shadow:0 14px 40px rgba(255,122,26,.22)}
 @media (min-width:760px){.feat-box{grid-template-columns:1.5fr 1fr}}
 .feat-box.vert{max-width:760px;margin:0 auto}
+.feat-box.vert .player{max-width:300px;width:100%;margin:0 auto}
+@media (max-width:759px){.feat-box.vert{background:transparent;border:0;box-shadow:none}.feat-box.vert .player{border-radius:20px;overflow:hidden;border:2px solid var(--ember)}.feat-box.vert .feat-info{text-align:center}}
 @media (min-width:760px){.feat-box.vert{grid-template-columns:300px 1fr}}
 .feat-info{padding:16px 18px 18px;display:flex;flex-direction:column;justify-content:center;gap:8px}
 .feat-info h2{font:700 26px/1.15 var(--display);margin:0}
@@ -144,7 +146,7 @@ const fmt=d=>{try{return new Date(d).toLocaleDateString('en',{day:'numeric',mont
 const thumb=v=>v.local?v.poster:`https://i.ytimg.com/vi/${v.id}/${v.short?'oar2':'hqdefault'}.jpg`;
 const thumbFallback=v=>`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
 const embed=(v,auto)=>`https://www.youtube-nocookie.com/embed/${v.id}?rel=0&modestbranding=1&playsinline=1${auto?'&autoplay=1':''}`;
-const isNew=v=>!v.local&&(Date.now()-new Date(v.published))<14*864e5;
+const isNew=v=>false;
 let list=[];
 
 function media(v){if(v.local)return `<video src="${v.local}" poster="${v.poster}" controls autoplay playsinline></video>`;
@@ -153,12 +155,12 @@ function imgTag(v,cls=''){return `<img src="${thumb(v)}" alt="" loading="lazy"${
 
 function renderFeat(){const v=list.find(x=>!x.local)||INTRO;const box=$('featBox');box.className='feat-box'+(v.short?' vert':'');
  box.innerHTML=`<button class="player${v.short?' vert':''}" type="button" aria-label="Play ${esc(v.title)}">${imgTag(v)}<span class="pbtn"></span></button>
- <div class="feat-info"><span class="date">${v.local?esc(v.label):fmt(v.published)}${v.short&&!v.local?' · Short':''}</span><h2>${esc(v.title)}</h2>${v.desc?`<p>${esc(v.desc)}</p>`:''}</div>`;
+ <div class="feat-info"><span class="date">${v.local?esc(v.label):(v.short?'Newest short':'Newest episode')}</span><h2>${esc(v.title)}</h2>${v.desc?`<p>${esc(v.desc)}</p>`:''}</div>`;
  const p=box.querySelector('.player');p.onclick=()=>{p.innerHTML=media(v);p.onclick=null;p.style.cursor='default';};}
 
 function renderGrid(kind){const g=$('grid');const sh=v=>v.short&&!v.local;const items=list.filter(v=>kind==='all'||(kind==='short'?sh(v):!sh(v)));
- g.className='grid'+(kind==='short'?' shorts':'');
- g.innerHTML=items.map((v,i)=>`<button class="tile${v.short&&kind==='short'?' s':''}" type="button" data-i="${list.indexOf(v)}"><span class="thumb">${imgTag(v)}${isNew(v)?'<span class="badge new">NEW</span>':(v.short&&!v.local)?'<span class="badge">SHORT</span>':''}<span class="mini"></span></span><span class="tb"><b>${esc(v.title)}</b><small>${v.local?esc(v.label):fmt(v.published)}</small></span></button>`).join('');
+ const allShort=items.length&&items.every(v=>v.short);const vert=kind==='short'||allShort;g.className='grid'+(vert?' shorts':'');
+ g.innerHTML=items.map((v,i)=>`<button class="tile${v.short&&vert?' s':''}" type="button" data-i="${list.indexOf(v)}"><span class="thumb">${imgTag(v)}${isNew(v)?'<span class="badge new">NEW</span>':(v.short&&!v.local)?'<span class="badge">SHORT</span>':''}<span class="mini"></span></span><span class="tb"><b>${esc(v.title)}</b><small>${v.local?esc(v.label):(v.short?'Short':'Episode')}</small></span></button>`).join('');
  g.querySelectorAll('.tile').forEach(b=>b.onclick=()=>openV(list[+b.dataset.i]));}
 
 function openV(v){$('mbox').className='mbox'+(v.short?' vert':'');$('mframe').innerHTML=media(v);$('mTitle').textContent=v.title;
@@ -174,10 +176,12 @@ const tabs=[...document.querySelectorAll('#tabs button')];
 tabs.forEach(b=>b.onclick=()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x===b));renderGrid(b.dataset.t);});
 
 async function load(){for(const u of SOURCES){try{const r=await fetch(u+'?t='+Math.floor(Date.now()/3e5),{cache:'no-store'});if(!r.ok)continue;const d=await r.json();if(d&&Array.isArray(d.videos))return d.videos;}catch(e){}}return [];}
-load().then(v=>{list=v.filter(x=>x&&x.id).concat([INTRO]);
+const clean=s=>String(s||'').replace(/#[\p{L}\p{N}_]+/gu,'').replace(/\s+/g,' ').replace(/[\s\-–|·]+$/,'').trim();
+const nice=s=>{let c=clean(s);const r=c.replace(/^BLINKEARS[\s\-–:|·🧡❤️💛]*/u,'').replace(/^[\s🧡]+/u,'').trim();return r||c||'BLINKEARS';};
+load().then(v=>{v=v.filter(x=>x&&x.id).map(x=>Object.assign({},x,{title:nice(x.title)}));list=v.length?v:[INTRO];
  renderFeat();renderGrid('all');
  const hasShort=list.some(x=>x.short&&!x.local),hasEp=list.some(x=>!(x.short&&!x.local));$('tabs').hidden=!(hasShort&&hasEp&&list.length>3);
- $('empty').hidden=list.length>1;});
+ $('empty').hidden=!!v.length;});
 })();
 </script>
 </body>
