@@ -70,6 +70,30 @@
 @media (max-width:720px){.site-header{gap:8px!important}.header-play,.header-watch{display:inline-flex;padding:0 12px;font-size:14px;height:38px}.header-watch+.header-play{margin-left:0}.header-play+.menu-button{margin-left:0}.wordmark{font-size:20px!important;letter-spacing:.02em!important}}
 @media (max-width:370px){.header-watch span{display:none}.header-play,.header-watch{padding:0 10px}.wordmark{font-size:18px!important}}
 .play-teaser .play-free{display:block;margin-top:14px;font-size:14px;color:var(--muted-dark)}
+/* What's new */
+.whatsnew{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.wn{display:inline-flex;align-items:center;gap:8px;max-width:100%;padding:7px 14px 7px 7px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,200,97,.35);color:#fff;text-decoration:none;font-size:14px;font-weight:700;line-height:1.2;backdrop-filter:blur(6px);transition:background .2s,border-color .2s}
+.wn:hover,.wn:focus-visible{background:rgba(255,122,26,.22);border-color:var(--glow)}
+.wn i{font-style:normal;flex:none;font-size:10.5px;font-weight:900;letter-spacing:.12em;padding:4px 8px;border-radius:999px;background:#ff5a8a;color:#fff}
+.wn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wn[hidden]{display:none}
+.statement-grid{grid-template-columns:1fr}
+.site-footer nav{flex-wrap:wrap;justify-content:center;row-gap:10px}
+@media (max-width:720px){
+ .character-grid{grid-template-columns:1fr 1fr;gap:10px}
+ .character{border-radius:18px;display:flex}
+ .portrait{flex:none;aspect-ratio:1/1;height:auto}
+ .character-body{padding:12px 12px 14px}
+ .character-body h3{font-size:22px;margin-bottom:2px}
+ .character-body .role{margin-bottom:6px;font-size:11px}
+ .character-body>p.subtitle{font-size:13.5px;line-height:1.35;margin:0}
+ .character-body>p.subtitle+p,.character .traits,.character .card-link,.portrait-hint{display:none}
+ .world-image{aspect-ratio:783/594}
+ .world-image img{object-position:center}
+ .whatsnew{margin-bottom:14px}.wn{font-size:13px}
+ .watch-follow,.shorts-copy .format-row{display:none}
+ .language-note{grid-template-columns:repeat(3,1fr)!important;margin-top:24px}.language-note div{padding:14px 8px 14px 0!important;border-top:0!important}.language-note div+div{padding-left:10px!important;border-left:1px solid var(--line-light)!important}.language-note dt{font-size:9.5px;letter-spacing:.12em}.language-note dd{font-size:16px}
+}
 </style>
 
 <script type="application/ld+json">
@@ -136,6 +160,10 @@
 
   <div class="hero-copy">
     <div class="hero-head reveal">
+      <nav class="whatsnew" aria-label="What's new">
+        <a class="wn" id="wnGame" href="jar.html"><i>NEW GAME</i><span>Firefly Jar</span></a>
+        <a class="wn" id="wnShort" href="watch.html" hidden><i>NEW SHORT</i><span></span></a>
+      </nav>
       <p class="kicker">An original animated family comedy</p>
       <h1>One family.<br><span class="glow-text">Everyday chaos.</span></h1>
     </div>
@@ -185,12 +213,6 @@
     <h2 class="reveal">Nothing magical has to happen.<br><em>This family is enough.</em></h2>
     <div class="statement-grid">
       <p class="big-copy reveal">A forgotten chore. A “quick fix.” A missing snack. A shortcut that was <em>definitely</em> going to work. BLINKEARS turns familiar family moments into fast visual comedy for kids, parents and everyone in between.</p>
-      <ul class="chaos-list reveal" aria-label="Typical ingredients">
-        <li><span>01</span>A forgotten chore</li>
-        <li><span>02</span>A “quick fix”</li>
-        <li><span>03</span>A missing snack</li>
-        <li><span>04</span>A shortcut that was going to work</li>
-      </ul>
     </div>
   </div>
 </section>
@@ -302,6 +324,7 @@
 <section id="world" class="world-section">
   <div class="world-image reveal">
     <picture>
+      <source media="(max-width: 720px)" srcset="world-mobile.jpg">
       <source srcset="poster-vertical.webp" type="image/webp">
       <img src="poster-vertical.jpg" width="1024" height="1536" loading="lazy"
            alt="BLINKEARS vertical poster: the family walking on a terrace at sunset">
@@ -332,10 +355,6 @@
         <div><dt>One character</dt><dd>a Blinkear</dd></div>
         <div><dt>Many</dt><dd>Blinkears</dd></div>
         <div><dt>The family</dt><dd>The Blinkears</dd></div>
-      </dl>
-      <dl class="credits reveal" aria-label="Credits">
-        <div><dt>Original Idea</dt><dd>Giorgi Imedashvili</dd></div>
-        <div><dt>Producer</dt><dd>Giorgi Imedashvili</dd></div>
       </dl>
     </div>
   </div>
@@ -410,6 +429,19 @@
 </dialog>
 <div class="toast" role="status" aria-live="polite"></div>
 <script src="app.js?v=20" defer></script>
+<script>
+/* What's new: newest game from play.html (tile marked .new), newest video from videos.json */
+(()=>{
+ fetch('play.html',{cache:'no-cache'}).then(r=>r.ok?r.text():'').then(t=>{if(!t)return;
+  const d=new DOMParser().parseFromString(t,'text/html');const a=d.querySelector('a.tile.new')||d.querySelector('a.new');if(!a)return;
+  const n=(a.querySelector('b')||a.querySelector('h3')||{}).textContent;const el=document.getElementById('wnGame');
+  if(n&&el){el.querySelector('span').textContent=n.trim();el.href=a.getAttribute('href');}}).catch(()=>{});
+ const clean=s=>{let c=String(s||'').replace(/#[\p{L}\p{N}_]+/gu,'').replace(/\s+/g,' ').trim();const r=c.replace(/^BLINKEARS[\s\-–:|·🧡❤️💛]*/u,'').trim();return r||c;};
+ (async()=>{for(const u of ['https://raw.githubusercontent.com/Blinkearsworld/blinkears/main/videos.json','videos.json']){try{
+  const r=await fetch(u,{cache:'no-store'});if(!r.ok)continue;const v=((await r.json()).videos||[]).find(x=>x&&x.id);if(!v)return;
+  const t=clean(v.title);if(!t)return;const el=document.getElementById('wnShort');el.querySelector('span').textContent=t;el.hidden=false;return;}catch(e){}}})();
+})();
+</script>
 <script>
 /* Latest shorts from the YouTube channel (same list the Watch page uses) */
 (()=>{const g=document.getElementById('latestGrid');if(!g)return;
