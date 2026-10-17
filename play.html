@@ -80,6 +80,10 @@ header p{margin:0;color:var(--muted);font-size:17px}
 footer{text-align:center;color:var(--muted);font-size:14px;margin:26px auto 0;max-width:600px;line-height:1.5}
 @media (prefers-reduced-motion:reduce){.logo{animation:none}.game{transition:none}}
 </style>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Blinkears">
 </head>
 <body>
 <div class="top"><a class="home" href="index.html">← blinkears.com</a><span></span></div>
@@ -211,5 +215,6 @@ footer{text-align:center;color:var(--muted);font-size:14px;margin:26px auto 0;ma
  bs.forEach(b=>b.onclick=()=>show(b.dataset.t));let k='all';try{k=sessionStorage.getItem('play-tab')||'all'}catch(e){}show(HINT[k]!==undefined?k:'all');})();
 </script>
 <script data-goatcounter="https://blinkears.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="install.js" defer></script>
 </body>
 </html>

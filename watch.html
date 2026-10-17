@@ -94,6 +94,10 @@ header p{margin:0 0 12px;color:var(--muted);font-size:17px}
 footer{text-align:center;color:var(--muted);font-size:14px;margin:30px auto 0;max-width:600px;line-height:1.5}
 @media (prefers-reduced-motion:reduce){.tile{transition:none}}
 </style>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Blinkears">
 </head>
 <body>
 <div class="top"><a class="pillbtn" href="index.html">← blinkears.com</a><a class="pillbtn play" href="play.html">🎮 Play</a></div>
@@ -185,5 +189,6 @@ load().then(v=>{v=v.filter(x=>x&&x.id).map(x=>Object.assign({},x,{title:nice(x.t
 })();
 </script>
 <script data-goatcounter="https://blinkears.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="install.js" defer></script>
 </body>
 </html>
