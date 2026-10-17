@@ -14,6 +14,8 @@
   const isAndroid=/Android/.test(ua);
   const inApp=/FBAN|FBAV|FB_IAB|Instagram|Messenger|Line\/|TikTok|musical_ly|Snapchat/i.test(ua);
   const iosChrome=/CriOS/.test(ua);
+  // Safari 26 (iOS 26) hides Share behind the ••• button at the bottom right
+  const vm=ua.match(/Version\/(\d+)/),newSafari=isIOS&&!iosChrome&&!/iPad/.test(ua)&&vm&&+vm[1]>=26;
   const mobile=isIOS||isAndroid;
   let deferred=null;
   addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;showBar();});
@@ -55,6 +57,10 @@
       [DOTS,'Tap <strong>⋯</strong> or <strong>⋮</strong> at the top of this screen'],
       ['🌐',isIOS?'Choose <strong>Open in Safari</strong>':'Choose <strong>Open in Chrome</strong> (or “Open in browser”)'],
       [PLUS,'Then tap <strong>Get the app</strong> again']]};
+    if(newSafari)return{sub:'Three quick taps and the Blinkears live on your home screen:',list:[
+      ['<span style="font:900 20px system-ui;letter-spacing:1px">•••</span>','Tap <strong>•••</strong> at the bottom right of Safari'],
+      [SHARE,'Tap <strong>Share</strong>'],
+      [PLUS,'Tap <strong>Add to Home Screen</strong>, then <strong>Add</strong>']]};
     if(isIOS)return{sub:'Two quick taps and the Blinkears live on your home screen:',list:[
       [SHARE,iosChrome?'Tap the <strong>Share</strong> button at the top, next to the address':'Tap the <strong>Share</strong> button '+(/iPad/.test(ua)?'at the top':'at the bottom of Safari')],
       [PLUS,'Scroll down and tap <strong>Add to Home Screen</strong>'],
@@ -65,7 +71,7 @@
       ['✅','Tap <strong>Install</strong>. That’s it!']]};
   }
   function openSheet(){
-    closeSheet();const s=steps();
+    closeSheet();hideBar();const s=steps();
     sheet=document.createElement('div');sheet.className='bk-sheet';sheet.setAttribute('role','dialog');sheet.setAttribute('aria-modal','true');sheet.setAttribute('aria-label','Get the Blinkears app');
     sheet.innerHTML=`<div class="bk-card"><img class="ic" src="${ICON}" alt=""><h2>Get the Blinkears app</h2><p class="sub">${s.sub}</p>
       <ol class="bk-steps">${s.list.map((x,i)=>`<li><b>${i+1}</b><i>${x[0]}</i><span>${x[1]}</span></li>`).join('')}</ol>
@@ -75,7 +81,9 @@
     // point at Safari's share button (bottom centre on iPhone, top on iPad / Chrome)
     if(isIOS&&!inApp){arrow=document.createElement('div');arrow.className='bk-arrow';arrow.setAttribute('aria-hidden','true');
       if(iosChrome||/iPad/.test(ua)){arrow.textContent='⬆';arrow.style.top='4px';arrow.style.right='60px';}
+      else if(newSafari){arrow.textContent='⬇';arrow.style.bottom='2px';arrow.style.right='34px';}
       else{arrow.textContent='⬇';arrow.style.bottom='2px';arrow.style.left='50%';arrow.style.marginLeft='-12px';}
+      sheet.querySelector('.bk-card').style.marginBottom='calc(52px + env(safe-area-inset-bottom,0px))';
       document.body.appendChild(arrow);}
   }
   function closeSheet(){if(sheet){sheet.remove();sheet=null;}if(arrow){arrow.remove();arrow=null;}}
