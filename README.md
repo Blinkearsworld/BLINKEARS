@@ -6,7 +6,7 @@ Changes are made directly in this repository (by Claude, via GitHub). No manual 
 ## Structure
 All files sit in ONE folder (no subfolders).
 - Pages: `index.html`, `watch.html`, `play.html`, `merch.html`, `privacy.html`, `terms.html`, `404.html`
-- Games (each a single self-contained file): `boing.html`, `jar.html`, `flap.html`, `bridge.html`, `bounce.html`, `band.html`, `splash.html`, `run.html`, `adventure.html`, plus the `birthday.html` card
+- Games (each a single self-contained file): `rush.html`, `boing.html`, `jar.html`, `flap.html`, `bridge.html`, `bounce.html`, `band.html`, `splash.html`, `run.html`, `adventure.html`, plus the `birthday.html` card
 - Shared styles/script: `style.css`, `app.js` · Images: `*.jpg` / `*.webp` / `*.png`
 - `CNAME` (blinkears.com) and `.nojekyll` must stay.
 
