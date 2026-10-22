@@ -97,7 +97,8 @@ footer{text-align:center;color:var(--muted);font-size:14px;margin:26px auto 0;ma
 <nav class="tabs" role="tablist" aria-label="Game types"><button type="button" role="tab" data-t="all" aria-selected="true">All</button><button type="button" role="tab" data-t="relax" aria-selected="false">🌙 Relax</button><button type="button" role="tab" data-t="challenge" aria-selected="false">🏆 Challenge</button><button type="button" role="tab" data-t="adventure" aria-selected="false">🗺️ Adventures</button><button type="button" role="tab" data-t="make" aria-selected="false">🎂 Make</button></nav>
 <p class="hint" id="ghint"></p>
 <div class="tiles" id="tiles">
-    <a class="tile new" data-g="relax" href="jar.html"><img loading="lazy" src="game-jar.webp" width="960" height="540" alt="A glass jar full of glowing orbs: fireflies, lanterns, a moon and a smiling sun, in the Blinkears' yard"><span class="tb"><b>Firefly Jar</b><small>Calm · play any time</small></span></a>
+    <a class="tile new" data-g="challenge" href="boing.html"><img loading="lazy" src="game-boing.webp" width="960" height="540" alt="Siko and Niki flying high after a launch from Rumba’s giant trampoline"><span class="tb"><b>Boing!</b><small>Launch &amp; fly · challenge a friend</small></span></a>
+    <a class="tile" data-g="relax" href="jar.html"><img loading="lazy" src="game-jar.webp" width="960" height="540" alt="A glass jar full of glowing orbs: fireflies, lanterns, a moon and a smiling sun, in the Blinkears' yard"><span class="tb"><b>Firefly Jar</b><small>Calm · play any time</small></span></a>
     <a class="tile" data-g="relax" href="band.html"><img loading="lazy" src="game-band2.webp" width="960" height="540" alt="Rumba, Samba, Siko and Niki on stage with drums, guitar, trumpet and xylophone"><span class="tb"><b>Blinkears Band</b><small>Music · tap and play</small></span></a>
     <a class="tile" data-g="challenge" href="flap.html"><img loading="lazy" src="game-flap.webp" width="960" height="540" alt="Siko, Niki, Samba and Rumba flapping their ears and flying between forest trees at sunset"><span class="tb"><b>Flap Flap!</b><small>One tap · just one more try!</small></span></a>
     <a class="tile" data-g="challenge" href="bridge.html"><img loading="lazy" src="game-bridge.webp" width="960" height="540" alt="Niki leaping over cliffs connected by glowing antenna bridges"><span class="tb"><b>Antenna Bridge</b><small>One finger · challenge a friend</small></span></a>
@@ -108,7 +109,17 @@ footer{text-align:center;color:var(--muted);font-size:14px;margin:26px auto 0;ma
     <a class="tile" data-g="make" href="birthday.html"><img loading="lazy" src="game-birthday.webp" width="960" height="540" alt="Rumba, Samba, Siko and Niki in their yard with a birthday cake, balloons and a present"><span class="tb"><b>Birthday Card</b><small>Free card · send with one link</small></span></a>
 </div>
 <div id="full" hidden>
-<a class="game new" href="jar.html">
+<a class="game new" href="boing.html">
+    <img loading="lazy" src="game-boing.webp" width="960" height="540" alt="Siko and Niki flying high after a launch from Rumba’s giant trampoline">
+    <div class="body">
+      <span class="kicker">Launch &amp; fly · challenge a friend</span>
+      <h2>Boing!</h2>
+      <p>Rumba’s giant trampoline sends you flying! Flap your ears, bounce on mushrooms, dodge the mud and see how far you can go.</p>
+      <div class="tags"><span>👆 Tap to launch &amp; flap</span><span>Ages 4+</span></div>
+      <span class="play">▶ Play Boing!</span>
+    </div>
+  </a>
+<a class="game" href="jar.html">
     <img loading="lazy" src="game-jar.webp" width="960" height="540" alt="A glass jar full of glowing orbs: fireflies, lanterns, a moon and a smiling sun, in the Blinkears' yard">
     <div class="body">
       <span class="kicker">Calm · play any time</span>
@@ -203,7 +214,7 @@ footer{text-align:center;color:var(--muted);font-size:14px;margin:26px auto 0;ma
 <footer>Your stars and best scores are saved on this device. Watch the cartoons on <a href="https://www.youtube.com/@BLINKEARS" target="_blank" rel="noopener" style="color:var(--ember)">YouTube</a>.</footer>
 <script>
 /* Today's pick: one game is featured each day (same for everyone on that day) */
-(()=>{const ids=['jar','flap','bridge','bounce','band','splash','run','adventure','birthday'];const d=new Date();const n=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5);
+(()=>{const ids=['boing','jar','flap','bridge','bounce','band','splash','run','adventure','birthday'];const d=new Date();const n=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5);
  const k=ids[n%ids.length];const src=document.querySelector('#full a[href="'+k+'.html"]');if(!src)return;const c=src.cloneNode(true);c.classList.remove('new');
  document.getElementById('todayCard').appendChild(c);document.getElementById('today').hidden=false;})();
 </script>
